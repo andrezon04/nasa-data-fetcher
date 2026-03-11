@@ -1,3 +1,6 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 /* CSS Reset */
 * {
     padding: 0;
@@ -7,8 +10,9 @@
     background: none;
     list-style: none;
     text-decoration: none;
-    background-color: #000;
-    font-family: "Alexandria", sans-serif;
+    background-color: #020640;
+    font-family: "Space Grotesk", "Alexandria", sans-serif;
+    color: #fff;
 }
 
 html,
@@ -23,3 +27,35 @@ img {
 }
 
 /* General Style */
+
+h1 {
+    text-align: center;
+    padding: 15px;
+}
+
+.apod-title {
+    color: #ffcc00;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.apod-date {
+    text-align: center;
+}
+
+.apod-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.apod-explain-label {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.apod-explain {
+    padding: 5px 20px 20px 20px;
+    text-align: center;
+}
