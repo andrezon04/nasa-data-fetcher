@@ -48,21 +48,30 @@ function renderData(data) {
 
   const title = document.createElement("h2");
   title.textContent = data.title;
+  title.className = "apod-title";
 
   const img = document.createElement("img");
   img.src = data.url;
   img.alt = data.title
+  img.className = "apod-img";
 
   const exp = document.createElement("p");
   exp.textContent = data.explanation;
+  exp.className = "apod-explain";
 
   const date = document.createElement("p");
   date.textContent = data.date;
+  date.className = "apod-date";
+
+  const label = document.createElement('h3');
+  label.className = "apod-explain-label"
+  label.textContent = "Resume of Picture:";
 
   container.appendChild(title);
-  container.appendChild(img);
-  container.appendChild(exp);
   container.appendChild(date);
+  container.appendChild(img);
+  container.appendChild(label);
+  container.appendChild(exp);
 }
 
 getApod();
