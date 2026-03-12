@@ -4,20 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>NASA APOD | Astronomy Picture of the Day</title>
+
+    <meta name="description" content="View NASA's Astronomy Picture of the Day with explanation and date.">
+
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-    <header>
-        <h1> Astronomy Picture of Day - APOD </h1>
+
+    <header class="site-header">
+        <h1>🚀 Astronomy Picture of the Day</h1>
+        <p class="subtitle">Daily space images provided by NASA</p>
     </header>
 
-    <main id="apod-container">
-        <p>Loading wonders of the universe...</p>
+    <main class="container">
+
+        <section id="apod-container" class="apod-section">
+            <p class="loading">Loading wonders of the universe...</p>
+        </section>
+
     </main>
 
-    <script src="assets/script.js"></script>
-</body>
+    <footer class="site-footer">
+        <p>
+            Data provided by 
+            NASA APOD API
+        </p>
+    </footer>
 
+    <script src="assets/script.js"></script>
+
+</body>
 </html>
