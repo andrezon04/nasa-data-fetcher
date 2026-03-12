@@ -41,7 +41,7 @@ A aplicação busca diariamente uma imagem do espaço e mostra **título, data, 
 1. Clone o repositório
 
 ```
-git clone https://github.com/seu-usuario/apod-project.git
+git clone https://github.com/andrezon04/nasa-data-fetcher.git
 ```
 
 2. Abra a pasta do projeto
