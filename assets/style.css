@@ -141,3 +141,37 @@ h1{
     font-size:1.2rem;
     opacity:0.7;
 }
+.site-footer{
+    text-align:center;
+    padding:30px 20px;
+    margin-top:40px;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.github-link{
+    margin:15px 0;
+}
+
+.github-link a{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    background:rgba(255,255,255,0.08);
+
+    transition:0.3s;
+}
+
+.github-link a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+.authors{
+    font-size:0.9rem;
+    opacity:0.8;
+}
