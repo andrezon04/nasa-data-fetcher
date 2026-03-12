@@ -1,61 +1,177 @@
-/* imports */
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
-/* CSS Reset */
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    background: none;
-    list-style: none;
-    text-decoration: none;
-    background-color: #020640;
-    font-family: "Space Grotesk", "Alexandria", sans-serif;
-    color: #fff;
+/* Reset */
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
 }
 
-html,
-body {
-    height: 100%;
-    width: 100%;
+body{
+    font-family: "Space Grotesk", sans-serif;
+    color:#fff;
+    min-height:100vh;
+
+    /* fundo espacial */
+    background: radial-gradient(circle at top, #0a0f5c, #010220 80%);
 }
 
-img {
-    max-width: 100%;
-    display: block;
+/* estrelas no fundo */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 2px, transparent 2px);
+
+    background-size: 120px 120px, 200px 200px, 350px 350px;
+    opacity:0.2;
+
+    pointer-events:none;
 }
 
-/* General Style */
-
-h1 {
-    text-align: center;
-    padding: 15px;
+/* layout principal */
+main{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
 }
 
-.apod-title {
-    color: #ffcc00;
-    text-align: center;
-    padding-bottom: 10px;
+/* header */
+
+header{
+    text-align:center;
+    padding:30px 20px;
 }
 
-.apod-date {
-    text-align: center;
+h1{
+    font-size:2.3rem;
+    letter-spacing:1px;
+
+    /* glow espacial */
+    text-shadow:
+        0 0 10px #4aa3ff,
+        0 0 20px #4aa3ff,
+        0 0 40px #1e40ff;
 }
 
-.apod-img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-    padding: 20px;
+/* titulo da imagem */
+
+.apod-title{
+    color:#ffd700;
+    text-align:center;
+    font-size:1.8rem;
+    margin-top:20px;
+
+    text-shadow:0 0 10px #ffd700;
 }
 
-.apod-explain-label {
-    padding-top: 15px;
-    text-align: center;
+/* data */
+
+.apod-date{
+    text-align:center;
+    opacity:0.8;
+    margin-bottom:10px;
 }
 
-.apod-explain {
-    padding: 5px 20px 20px 20px;
-    text-align: center;
+/* imagem */
+
+.apod-img{
+    display:block;
+    margin:20px auto;
+    border-radius:14px;
+
+    max-width:800px;
+    width:100%;
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.6),
+        0 0 40px rgba(50,120,255,0.4);
+
+    transition:transform .4s ease, box-shadow .4s ease;
+}
+
+/* efeito hover */
+
+.apod-img:hover{
+    transform:scale(1.03);
+
+    box-shadow:
+        0 0 40px rgba(80,150,255,0.7),
+        0 0 60px rgba(80,150,255,0.4);
+}
+
+/* label */
+
+.apod-explain-label{
+    text-align:center;
+    font-size:1.3rem;
+    margin-top:10px;
+    color:#7fc8ff;
+}
+
+/* explicação */
+
+.apod-explain{
+    margin-top:10px;
+    line-height:1.7;
+
+    padding:15px 20px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.05);
+    border-radius:10px;
+
+    backdrop-filter: blur(6px);
+}
+
+/* loading */
+
+.loading{
+    text-align:center;
+    margin-top:80px;
+    font-size:1.2rem;
+    opacity:0.7;
+}
+.site-footer{
+    text-align:center;
+    padding:30px 20px;
+    margin-top:40px;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.github-link{
+    margin:15px 0;
+}
+
+.github-link a{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    background:rgba(255,255,255,0.08);
+
+    transition:0.3s;
+}
+
+.github-link a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+.authors{
+    font-size:0.9rem;
+    opacity:0.8;
 }
