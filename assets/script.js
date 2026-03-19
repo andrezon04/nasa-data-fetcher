@@ -50,10 +50,23 @@ function renderData(data) {
   title.textContent = data.title;
   title.className = "apod-title";
 
-  const img = document.createElement("img");
-  img.src = data.url;
-  img.alt = data.title
-  img.className = "apod-img";
+  if (data.media_type === "video") {
+
+    const video = document.createElement("iframe");
+    video.src = data.url;
+    video.height = "100%";
+    video.widht = "400px";
+    video.className = "apod-video";
+    container.appendChild(video);
+
+  } else {
+
+    const img = document.createElement("img");
+    img.src = data.url;
+    img.alt = data.title
+    img.className = "apod-img";
+    container.appendChild(img);
+  }
 
   const exp = document.createElement("p");
   exp.textContent = data.explanation;
@@ -69,7 +82,7 @@ function renderData(data) {
 
   container.appendChild(title);
   container.appendChild(date);
-  container.appendChild(img);
+
   container.appendChild(label);
   container.appendChild(exp);
 }
