@@ -6,7 +6,7 @@ A simple web application that displays NASA's **Astronomy Picture of the Day** u
 
 The application fetches daily space images and displays the **title, date, image, and explanation**.
 
-The full documentation for this API can be found in the [APOD API Github repository](https://github.com/nasa/apod-api). For more information about NASA's API, access the [official site](https://api.nasa.gov/).
+The full documentation for this API can be found in the [APOD API Github repository](https://github.com/nasa/apod-api). For more information about **NASA's API**, access the [official site](https://api.nasa.gov/).
 
 ### 🌌 Features:
 
