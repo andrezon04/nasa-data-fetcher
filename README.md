@@ -1,42 +1,75 @@
-## 🚀 Astronomy Picture of the Day (APOD)
+# React + TypeScript + Vite
 
-### 📄 About:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-A simple web application that displays NASA's **Astronomy Picture of the Day** using the official [APOD NASA API](http://apod.nasa.gov/apod/astropix.html).
+Currently, two official plugins are available:
 
-The application fetches daily space images and displays the **title, date, image, and explanation**.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-The full documentation for this API can be found in the [APOD API Github repository](https://github.com/nasa/apod-api). For more information about **NASA's API**, access the [official site](https://api.nasa.gov/).
+## React Compiler
 
-### 🌌 Features:
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-* Fetches data from the **NASA APOD API**.
-* Displays:
+## Expanding the ESLint configuration
 
-  * Title;
-  * Date;
-  * Image of the day;
-  * Explanation.
-* Error handling if the request fails;
-* Clean and responsive layout;
-* Dynamic rendering with JavaScript.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### 🛠 Technologies Used:
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-* HTML5;
-* CSS3;
-* JavaScript (ES6+);
-* Fetch API;
-* NASA APOD API.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-### ▶ How to Run:
-
-1. Clone the repository:
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 
 ```
-git clone https://github.com/andrezon04/nasa-data-fetcher.git
+
+You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+
 ```
-
-2. Open the project folder;
-
-3. Open **index.html** in your browser.
